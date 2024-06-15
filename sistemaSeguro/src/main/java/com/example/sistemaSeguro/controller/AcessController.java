@@ -5,8 +5,9 @@ import com.example.sistemaSeguro.model.UsuarioEntity;
 import com.example.sistemaSeguro.service.UsuarioService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.annotation.Secured;
 import org.springframework.web.bind.annotation.*;
-
+import org.springframework.security.core.Authentication;
 import java.util.Optional;
 
 @RestController
@@ -41,5 +42,11 @@ public class AcessController {
     public String extractUsername(@PathVariable String token) {
         String username = usuarioService.extractUsername(token);
         return username;
+    }
+
+    @Secured("ADMIN")
+    @GetMapping("/admin")
+    public String onlyAdmin(Authentication authentication) {
+        return "Admin: " + authentication.getName();
     }
 }
