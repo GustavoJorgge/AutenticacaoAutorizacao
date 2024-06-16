@@ -102,3 +102,8 @@ public class JwtUtil {
 ## Configuração do Banco de Dados
 
 Configure o arquivo `application.properties` com as informações do banco de dados. No caso deste projeto eu utilizei o PostgreSQL
+
+## Arquitetura do Projeto
+![sistemaSeguro](https://github.com/GustavoJorgge/AutenticacaoAutorizacao/assets/99773984/6b28b41a-8285-4f01-9aef-c7ad644b3798)
+
+
