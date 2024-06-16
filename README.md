@@ -69,8 +69,11 @@ public class JwtUtil {
 - **Método**: POST
 - **Segurança**: Somente ADMIN
 
-  ![image](https://github.com/GustavoJorgge/AutenticacaoAutorizacao/assets/99773984/a0803cc4-523f-4509-9992-f702339c7cb6)
+![image](https://github.com/GustavoJorgge/AutenticacaoAutorizacao/assets/99773984/a0803cc4-523f-4509-9992-f702339c7cb6)
 ![image](https://github.com/GustavoJorgge/AutenticacaoAutorizacao/assets/99773984/16864f57-ef9e-463f-88aa-bf2b69f64c8e)
+#### Se não for ADMIN
+![image](https://github.com/GustavoJorgge/AutenticacaoAutorizacao/assets/99773984/fd3c030f-93bf-4b52-b548-8b66cc512f99)
+
 
 
 ## Exemplos de retorno:
