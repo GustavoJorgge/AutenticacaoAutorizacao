@@ -32,7 +32,7 @@ public class CustomUserDetailsService implements UserDetailsService {
                 .orElseThrow(() -> new UsernameNotFoundException("Usuário não encontrado: " + username));
 
         Set<GrantedAuthority> authorities = new HashSet<>();
-        authorities.add(new SimpleGrantedAuthority(usuario.getTipoConta()));
+        authorities.add(new SimpleGrantedAuthority("ROLE_" + usuario.getTipoConta()));
 
         return new User(usuario.getNomeUsuario(), usuario.getSenha(), authorities);
     }

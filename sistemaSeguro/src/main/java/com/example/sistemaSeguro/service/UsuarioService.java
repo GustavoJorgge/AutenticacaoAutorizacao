@@ -5,6 +5,7 @@ import com.example.sistemaSeguro.model.UsuarioEntity;
 import com.example.sistemaSeguro.repository.UsuarioRepository;
 import jakarta.annotation.PostConstruct;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -16,8 +17,16 @@ public class UsuarioService {
     @Autowired
     private UsuarioRepository usuarioRepository;
 
+    @Autowired
+    private PasswordEncoder passwordEncoder; // Inject the password encoder bean
+
+    public List<UsuarioEntity> buscaTodosUsuarios(){
+        List<UsuarioEntity> usuarioEntity = usuarioRepository.findAll();
+        return usuarioEntity;
+    }
     public UsuarioEntity cadastrarUsuario(UsuarioEntity user){
         System.out.println(user);
+        user.setSenha(passwordEncoder.encode(user.getSenha()));
         return usuarioRepository.save(user);
     }
 

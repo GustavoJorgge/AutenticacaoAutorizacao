@@ -1,24 +1,17 @@
 package com.example.sistemaSeguro.infra.security;
 
-import com.example.sistemaSeguro.model.UsuarioEntity;
-import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
-import io.jsonwebtoken.SignatureAlgorithm;
 import io.jsonwebtoken.io.Decoders;
 import io.jsonwebtoken.io.Encoders;
 import io.jsonwebtoken.security.Keys;
 
 import javax.crypto.SecretKey;
-import javax.crypto.spec.SecretKeySpec;
-import java.security.Key;
-import java.util.Base64;
 import java.util.Date;
 
 public class JwtUtil {
     private static final SecretKey SECRET_KEY = generateSecretKey();
     private static final String SECRET_STRING = getSecretString();
     private static final long EXPIRATION_TIME = 864_000_000;
-    // 10 dias de validade para o token
 
     private static SecretKey generateSecretKey() {
         SecretKey key = Jwts.SIG.HS512.key().build();
